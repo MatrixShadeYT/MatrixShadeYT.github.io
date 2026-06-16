@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="MatrixShadeYT">
-    <meta name="description" content="Landing page for Matrix Techno">
-    <title>Index Page - Matrix Techno</title>
+    <meta name="description" content="Social Media Links for Matrix Techno">
+    <title>Socials - Matrix Techno</title>
     <style>
       /* Reset and base styles */
       * {
@@ -23,15 +23,16 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 30px; /* Space between title and grid */
-        padding: 20px;
-        overflow: hidden;
+        gap: 25px;
+        padding: 40px 20px; /* Increased top/bottom padding for the longer list */
+        overflow-x: hidden;
+        overflow-y: auto; /* Allows scrolling if the list gets long on small screens */
         position: relative;
       }
 
       /* Background Canvas */
       .space-bg {
-        position: absolute;
+        position: fixed; /* Fixed so it stays in place if you scroll */
         top: 0;
         left: 0;
         width: 100%;
@@ -40,68 +41,82 @@
         pointer-events: none;
       }
 
-      /* Cool Red Title Styling */
+      /* Crimson Title */
       .main-title {
-        color: #ff2a2a; /* Vibrant crimson red */
-        font-size: 2.5rem;
+        color: #ff2a2a;
+        font-size: 2.3rem;
         font-weight: 800;
         letter-spacing: 2px;
         text-transform: uppercase;
         z-index: 10;
-        text-shadow: 0 0 10px rgba(255, 42, 42, 0.6), 
-                     0 0 20px rgba(255, 42, 42, 0.3); /* Neon red glow */
+        text-shadow: 0 0 10px rgba(255, 42, 42, 0.6);
         text-align: center;
       }
 
-      /* 2x2 Button Grid Container */
-      .button-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
-        gap: 20px; /* Space between the buttons */
+      /* Social Links Container */
+      .social-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
         width: 100%;
-        max-width: 550px; /* Slightly wider to accommodate side-by-side buttons */
+        max-width: 450px;
         z-index: 10;
       }
 
-      /* Button styling */
-      .nav-button {
+      /* Social Button Styling */
+      .social-button {
         text-decoration: none;
         background: rgba(30, 30, 30, 0.75);
         color: #4af626;
         border: 2px solid #333333;
         border-radius: 8px;
-        padding: 20px; /* Slightly square padding looks great in a grid */
-        text-align: center;
+        padding: 14px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         font-weight: 600;
-        font-size: 1.1rem;
-        letter-spacing: 0.5px;
+        font-size: 1.05rem;
         transition: all 0.3s ease;
-        display: block;
         backdrop-filter: blur(4px);
       }
 
-      /* Hover and Focus States */
-      .nav-button:hover, .nav-button:focus {
+      .social-handle {
+        color: #aaaaaa;
+        font-size: 0.9rem;
+        font-weight: 400;
+        transition: color 0.3s ease;
+      }
+
+      /* Hover effects */
+      .social-button:hover, .social-button:focus {
         background: #4af626;
         color: #121212;
         border-color: #4af626;
-        transform: translateY(-3px);
-        box-shadow: 0 5px 20px rgba(74, 246, 38, 0.4);
+        transform: translateX(6px);
+        box-shadow: 0 5px 15px rgba(74, 246, 38, 0.3);
       }
 
-      /* Active State */
-      .nav-button:active {
-        transform: translateY(0);
+      .social-button:hover .social-handle {
+        color: #222222;
       }
 
-      /* Responsive fix: Stack vertically on small mobile screens if needed */
-      @media (max-width: 450px) {
-        .button-grid {
-          grid-template-columns: 1fr;
-        }
-        .main-title {
-          font-size: 2rem;
-        }
+      /* Back Button to return home */
+      .back-home {
+        text-decoration: none;
+        color: #ff2a2a;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        z-index: 10;
+        margin-top: 15px;
+        transition: all 0.2s ease;
+        opacity: 0.7;
+      }
+
+      .back-home:hover {
+        opacity: 1;
+        text-shadow: 0 0 8px rgba(255, 42, 42, 0.5);
       }
     </style>
   </head>
@@ -109,19 +124,45 @@
 
     <canvas class="space-bg" id="spaceCanvas"></canvas>
 
-    <h1 class="main-title">MatrixShadeYT</h1>
+    <h1 class="main-title">Connect</h1>
 
-    <div class="button-grid">
-      <a href="/social" class="nav-button">Social</a>
-      <a href="/projects" class="nav-button">Projects</a>
-      <a href="/portfolio" class="nav-button">Portfolio</a>
-      <a href="/art" class="nav-button">Art</a>
+    <div class="social-container">
+      <a href="https://youtube.com/@MatrixShadeYT" target="_blank" rel="noopener noreferrer" class="social-button">
+        <span>YouTube</span>
+        <span class="social-handle">@MatrixShadeYT</span>
+      </a>
+      
+      <a href="https://github.com/MatrixShadeYT" target="_blank" rel="noopener noreferrer" class="social-button">
+        <span>GitHub</span>
+        <span class="social-handle">MatrixShadeYT</span>
+      </a>
+
+      <a href="https://discord.gg/qyqQNbyreU" target="_blank" rel="noopener noreferrer" class="social-button">
+        <span>Discord</span>
+        <span class="social-handle">Join Server</span>
+      </a>
+
+      <a href="https://instagram.com/MatrixShadeYT" target="_blank" rel="noopener noreferrer" class="social-button">
+        <span>Instagram</span>
+        <span class="social-handle">@MatrixShadeYT</span>
+      </a>
+
+      <a href="https://tiktok.com/@MatrixShadeYT" target="_blank" rel="noopener noreferrer" class="social-button">
+        <span>TikTok</span>
+        <span class="social-handle">@MatrixShadeYT</span>
+      </a>
+
+      <a href="https://unvale.io/MatrixShadeYT" target="_blank" rel="noopener noreferrer" class="social-button">
+        <span>Unvale</span>
+        <span class="social-handle">MatrixShadeYT</span>
+      </a>
     </div>
+
+    <a href="/" class="back-home">← Return Home</a>
 
     <script>
       const canvas = document.getElementById('spaceCanvas');
       const ctx = canvas.getContext('2d');
-
       let width = canvas.width = window.innerWidth;
       let height = canvas.height = window.innerHeight;
 
@@ -132,7 +173,6 @@
 
       const numParticles = 40;
       const particles = [];
-
       for (let i = 0; i < numParticles; i++) {
         particles.push({
           x: Math.random() * width,
@@ -145,7 +185,6 @@
       function animate() {
         ctx.fillStyle = 'rgba(7, 9, 14, 0.2)'; 
         ctx.fillRect(0, 0, width, height);
-
         const centerX = width / 2;
         const centerY = height / 2;
 
@@ -177,10 +216,8 @@
           ctx.fillStyle = `rgba(74, 246, 38, ${Math.min(0.3, 100 / distance)})`;
           ctx.fill();
         });
-
         requestAnimationFrame(animate);
       }
-
       animate();
     </script>
   </body>
